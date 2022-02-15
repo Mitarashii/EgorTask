@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
+import config.pages.OverviewProfilePage;
 import config.pages.PackagesProfilePage;
 import config.pages.ProjectsProfilePage;
 import config.pages.RepositoriesProfilePage;
@@ -15,6 +16,7 @@ public class ProfileTabTests {
     RepositoriesProfilePage repositoryTab = new RepositoriesProfilePage();
     ProjectsProfilePage projectTab = new ProjectsProfilePage();
     PackagesProfilePage packagesTab = new PackagesProfilePage();
+    OverviewProfilePage overviewTab = new OverviewProfilePage();
 
     /**** TEST DATA ****/
     public final String repositoryEgorTask = "EgorTask";
@@ -45,5 +47,10 @@ public class ProfileTabTests {
         packagesTab.openPackagesTab();
     }
 
-    // Сделать тест на открытие вкладки Projects по аналогии с Repositories
+    @Test
+    void openOverviewPage() {
+        overviewTab.openOverviewTab();
+    }
+
+    // Написать тест на Овервью
 }
