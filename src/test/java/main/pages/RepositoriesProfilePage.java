@@ -1,4 +1,4 @@
-package config.pages;
+package main.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;

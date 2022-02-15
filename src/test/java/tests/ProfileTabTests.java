@@ -1,16 +1,17 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
-import config.pages.OverviewProfilePage;
-import config.pages.PackagesProfilePage;
-import config.pages.ProjectsProfilePage;
-import config.pages.RepositoriesProfilePage;
+import main.config.BaseSetup;
+import main.pages.OverviewProfilePage;
+import main.pages.PackagesProfilePage;
+import main.pages.ProjectsProfilePage;
+import main.pages.RepositoriesProfilePage;
 import org.junit.jupiter.api.*;
 
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ProfileTabTests {
+public class ProfileTabTests extends BaseSetup {
 
     /**** PAGES ****/
     RepositoriesProfilePage repositoryTab = new RepositoriesProfilePage();
@@ -19,11 +20,10 @@ public class ProfileTabTests {
     OverviewProfilePage overviewTab = new OverviewProfilePage();
 
     /**** TEST DATA ****/
-    public final String repositoryEgorTask = "EgorTask";
 
     @BeforeEach
     void beforeEach() {
-        open("https://github.com/Mitarashii");
+        open(mitarashiiProfileUrl);
     }
 
     @AfterEach
@@ -52,5 +52,4 @@ public class ProfileTabTests {
         overviewTab.openOverviewTab();
     }
 
-    //
 }
