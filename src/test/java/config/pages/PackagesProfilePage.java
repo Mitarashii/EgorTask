@@ -12,7 +12,9 @@ public class PackagesProfilePage {
 
     /*** METHODS ***/
     public void openPackagesTab() {
-        PACKAGE_TAB.shouldHave(Condition.visible).click();
-        PACKAGE_RESULT_PANEL.shouldBe(Condition.visible);
+        if (!PACKAGE_RESULT_PANEL.isDisplayed() && PACKAGE_TAB.isDisplayed()) {
+            PACKAGE_TAB.shouldHave(Condition.visible).click();
+            PACKAGE_RESULT_PANEL.shouldBe(Condition.visible);
+        }
     }
 }

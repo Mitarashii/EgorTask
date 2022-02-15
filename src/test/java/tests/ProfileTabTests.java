@@ -52,5 +52,5 @@ public class ProfileTabTests {
         overviewTab.openOverviewTab();
     }
 
-    // Написать тест на Овервью
+    //
 }

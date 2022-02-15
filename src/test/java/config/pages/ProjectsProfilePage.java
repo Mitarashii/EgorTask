@@ -13,8 +13,9 @@ public class ProjectsProfilePage {
 
     /*** METHODS ***/
     public void openProjectsTab() {
-        PROJECTS_TAB.shouldHave(Condition.visible).click();
-        PROJECTS_RESULT_PANEL.shouldBe(Condition.visible);
-
+        if (!PROJECTS_RESULT_PANEL.isDisplayed() && PROJECTS_TAB.isDisplayed()) {
+            PROJECTS_TAB.shouldHave(Condition.visible).click();
+            PROJECTS_RESULT_PANEL.shouldBe(Condition.visible);
+        }
     }
 }

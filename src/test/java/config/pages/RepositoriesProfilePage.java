@@ -19,9 +19,12 @@ public class RepositoriesProfilePage {
 
     /*** METHODS ***/
     public void openRepositoryTab() {
-        REPOSITORIES_TAB.shouldHave(Condition.exist).click();
-        REPOSITORIES_LIST.first().shouldBe(Condition.visible, Duration.ofSeconds(2));
-    }
+        if (!REPOSITORIES_LIST.first().isDisplayed() && REPOSITORIES_TAB.isDisplayed()) {
+            REPOSITORIES_TAB.shouldHave(Condition.exist).click();
+            REPOSITORIES_LIST.first().shouldBe(Condition.visible, Duration.ofSeconds(2));
+        }
+}
+
 
     public void searchRepositoryName(String repositoryName) {
         REPOSITORIES_LIST.findBy(text(repositoryName)).shouldBe(visible);

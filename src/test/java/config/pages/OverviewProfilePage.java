@@ -22,4 +22,4 @@ public class OverviewProfilePage {
 // 1. find locators
 // 2. type methods
 // 3. type page
-// 4. make a test with "Overview"
+// 4. make a test with Overview"
