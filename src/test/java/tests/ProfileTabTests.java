@@ -1,13 +1,10 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import config.pages.PackagesProfilePage;
 import config.pages.ProjectsProfilePage;
 import config.pages.RepositoriesProfilePage;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.*;
 
 
 import static com.codeborne.selenide.Selenide.*;
@@ -17,17 +14,18 @@ public class ProfileTabTests {
     /**** PAGES ****/
     RepositoriesProfilePage repositoryTab = new RepositoriesProfilePage();
     ProjectsProfilePage projectTab = new ProjectsProfilePage();
+    PackagesProfilePage packagesTab = new PackagesProfilePage();
 
     /**** TEST DATA ****/
     public final String repositoryEgorTask = "EgorTask";
 
-    @BeforeAll
-    static void beforeAll() {
+    @BeforeEach
+    void beforeEach() {
         open("https://github.com/Mitarashii");
     }
 
-    @AfterAll
-    static void afterAll() {
+    @AfterEach
+    void afterEach() {
         Selenide.closeWebDriver();
     }
 
@@ -40,6 +38,11 @@ public class ProfileTabTests {
     @Test
     void openProjectsTab() {
         projectTab.openProjectsTab();
+    }
+
+    @Test
+    void openPackagesTab() {
+        packagesTab.openPackagesTab();
     }
 
     // Сделать тест на открытие вкладки Projects по аналогии с Repositories
